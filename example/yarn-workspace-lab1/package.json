@@ -1,0 +1,8 @@
+{
+  "name": "yarn-workspace-lab1",
+  "private": true,
+  "workspaces": ["app-api-server", "app-iso", "app-ui"],
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
