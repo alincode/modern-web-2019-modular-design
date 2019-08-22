@@ -41,30 +41,33 @@ lerna add os --scope=@rooit/server
 lerna add @rooit/lib-node --scope=@rooit/api-server
 ```
 
-```
-命令：
-  lerna add <pkg> [globs..]  Add a single dependency to matched packages
-  lerna bootstrap            Link local packages together and install remaining package dependencies
-  lerna changed              List local packages that have changed since the last tagged release          [別名: updated]
-  lerna clean                Remove the node_modules directory from all packages
-  lerna create <name> [loc]  Create a new lerna-managed package
-  lerna diff [pkgName]       Diff all packages or a single package since the last release
-  lerna exec [cmd] [args..]  Execute an arbitrary command in each package
-  lerna import <dir>         Import a package into the monorepo with commit history
-  lerna init                 Create a new Lerna repo or upgrade an existing repo to the current version of Lerna.
-  lerna link                 Symlink together all packages that are dependencies of each other
-  lerna list                 List local packages                                                       [別名: ls, la, ll]
-  lerna publish [bump]       Publish packages in the current project.
-  lerna run <script>         Run an npm script in each package that contains that script
-  lerna version [bump]       Bump version of packages changed since the last release.
+### Conventional Commits
 
-Global Options:
-  --loglevel       What level of logs to report.                                                    [字串] [預設值: info]
-  --concurrency    How many processes to use when lerna parallelizes tasks.                            [數字] [預設值: 4]
-  --reject-cycles  Fail if a cycle is detected among dependencies.                                                 [布林]
-  --no-progress    Disable progress bars. (Always off in CI)                                                       [布林]
-  --no-sort        Do not sort packages topologically (dependencies before dependents).                            [布林]
-  --max-buffer     Set max-buffer (in bytes) for subcommand execution                                              [數字]
-  -h, --help       顯示說明                                                                                        [布林]
-  -v, --version    顯示版本                                                                                        [布林]
+**structured**
+
 ```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer]
+```
+
+**Examples**
+
+```
+feat: allow provided config object to extend other configs
+feat(lang): add polish language
+
+# 零星工作
+chore!: drop Node 6 from testing matrix
+
+docs: correct spelling of CHANGELOG
+
+fix: correct minor typos in code
+```
+
+**參考資料**
+
+* [Conventional Commits 1.0.0-beta.4](https://www.conventionalcommits.org/en/v1.0.0-beta.4/)
+* [Commit Message Guidelines | Contributing to Angular](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)
